@@ -1,0 +1,25 @@
+tests:
+- healthStatus:
+    status: Degraded
+    message: 'Error 400 (bad_request)'
+  inputPath: testdata/degraded_condition_ready_status_else_than_true.yaml
+- healthStatus:
+    status: Progressing
+    message: Waiting for RabbitMQ Operator
+  inputPath: testdata/progressing_no_condition_ready_status.yaml
+- healthStatus:
+    status: Progressing
+    message: Waiting for RabbitMQ Operator
+  inputPath: testdata/progressing_no_conditions.yaml
+- healthStatus:
+    status: Progressing
+    message: Waiting for RabbitMQ Operator
+  inputPath: testdata/progressing_no_status.yaml
+- healthStatus:
+    status: Healthy
+    message: Success
+  inputPath: testdata/healthy_condition_ready_status_true.yaml
+- healthStatus:
+    status: Healthy
+    message: ''
+  inputPath: testdata/healthy_condition_ready_status_true_no_message.yaml

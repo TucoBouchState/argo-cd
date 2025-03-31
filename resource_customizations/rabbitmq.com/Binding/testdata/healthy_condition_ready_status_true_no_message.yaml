@@ -1,0 +1,23 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Binding
+metadata:
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: test
+  name: tst-binding
+  namespace: tst
+spec:
+  destination: queue
+  destinationType: queue
+  rabbitmqClusterReference:
+    name: rabbitmq-cluster
+    namespace: rabbitmq-cluster
+  source: exchange
+  vhost: tst
+status:
+  conditions:
+    - lastTransitionTime: '2025-03-28T13:19:17Z'
+      reason: SuccessfulCreateOrUpdate
+      status: 'True'
+      type: Ready
+  observedGeneration: 1

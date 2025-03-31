@@ -1,0 +1,18 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Exchange
+metadata:
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: test
+  name: tst-exchange
+  namespace: tst
+spec:
+  durable: true
+  name: tst-exchange
+  rabbitmqClusterReference:
+    name: rabbitmq-cluster
+    namespace: rabbitmq-cluster
+  type: fanout
+  vhost: tst
+status:
+  observedGeneration: 1
