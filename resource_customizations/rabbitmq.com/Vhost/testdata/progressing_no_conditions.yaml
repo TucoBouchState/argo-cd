@@ -1,0 +1,16 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Vhost
+metadata:
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: test
+  name: tst-vhost
+  namespace: tst
+spec:
+  defaultQueueType: quorum
+  name: vhost
+  rabbitmqClusterReference:
+    name: rabbitmq-cluster
+    namespace: rabbitmq
+status:
+  observedGeneration: 1

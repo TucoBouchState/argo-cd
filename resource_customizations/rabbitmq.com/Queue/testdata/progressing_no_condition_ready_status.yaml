@@ -1,0 +1,22 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: test
+  name: tst-queue
+  namespace: tst
+spec:
+  durable: true
+  name: queue
+  rabbitmqClusterReference:
+    name: rabbitmq-cluster
+    namespace: rabbitmq-cluster
+  vhost: tst
+status:
+  conditions:
+    - lastTransitionTime: '2025-03-28T13:47:37Z'
+      message: 'Success'
+      status: 'True'
+      type: Other
+  observedGeneration: 1

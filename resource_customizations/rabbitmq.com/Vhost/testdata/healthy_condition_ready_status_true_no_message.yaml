@@ -1,0 +1,21 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Vhost
+metadata:
+  labels:
+    app.kubernetes.io/component: backend
+    app.kubernetes.io/instance: test
+  name: tst-vhost
+  namespace: tst
+spec:
+  defaultQueueType: quorum
+  name: vhost
+  rabbitmqClusterReference:
+    name: rabbitmq-cluster
+    namespace: rabbitmq
+status:
+  conditions:
+    - lastTransitionTime: '2025-03-28T13:19:17Z'
+      reason: SuccessfulCreateOrUpdate
+      status: 'True'
+      type: Ready
+  observedGeneration: 1
